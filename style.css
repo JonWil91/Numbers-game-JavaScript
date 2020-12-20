@@ -35,3 +35,12 @@
 .btn:hover {
   background-color: #ccc;
 }
+
+.message {
+  margin-bottom: 3rem;
+  height: 3rem;
+}
+
+.label-score {
+  margin-bottom: 2rem;
+}
