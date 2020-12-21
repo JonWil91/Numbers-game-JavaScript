@@ -20,6 +20,14 @@ document.querySelector('.check').addEventListener('click', function () {
 
         // Reveals secret number
         document.querySelector('.number').textContent = secretNumber;
+
+        // Change background colour
+        document.querySelector('body').style.backgroundColor = '#60b347';
+
+        if (score > highScore) {
+            highScore = score;
+            document.querySelector('.highscore').textContent = highScore;
+        }
     }
 
     // When guess is too high
@@ -31,7 +39,6 @@ document.querySelector('.check').addEventListener('click', function () {
         } else {
             document.querySelector('.message').textContent = 'You Lose'
             document.querySelector('.score').textContent = 0;
-
         }
     }
 
@@ -44,8 +51,6 @@ document.querySelector('.check').addEventListener('click', function () {
         } else {
             document.querySelector('.message').textContent = 'You Lose'
             document.querySelector('.score').textContent = 0;
-
         }
     }
-
 });
