@@ -72,5 +72,6 @@ document.querySelector('.again').addEventListener('click', function () {
     document.querySelector('.guess').value = '';
     document.querySelector('.number').style.width = '10rem';
     document.querySelector('.number').textContent = '?';
+    document.querySelector('.again').classList.remove('again-post-game')
 })
 
