@@ -1,13 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 
+body {
+    font-family: 'Amatic SC', cursive;
+    background-color: #f5f5dc;
+    color: black;
+    font-size: 3rem;
+}
+
+.title {
+    font-size: 4rem;
+}
 
 .between {
-  font-size: 1.4rem;
   display: inline;
   float: right;
 }
 
 .again {
   top: 2rem;
+}
+
+.guess {
+    text-align: center;
+    background-color: #f5f5dc;
+    border-width: 0.5rem;
+    border-color: #eee;
 }
 
 .number {
@@ -26,10 +43,10 @@
   border: none;
   background-color: #eee;
   color: #222;
-  font-size: 2rem;
-  font-family: inherit;
   padding: 1rem;
   cursor: pointer;
+  font-size: 3rem;
+  text-align: center;
 }
 
 .btn:hover {
@@ -43,4 +60,19 @@
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+.again-post-game {
+    -webkit-animation: bounce .3s infinite alternate;
+    -moz-animation: bounce .3s infinite alternate;
+    animation: bounce .3s infinite alternate;
+}
+    @-webkit-keyframes bounce {
+    to { -webkit-transform: scale(1.2); }
+}
+    @-moz-keyframes bounce {
+    to { -moz-transform: scale(1.2); }
+}
+    @keyframes bounce {
+    to { transform: scale(1.2); }
 }

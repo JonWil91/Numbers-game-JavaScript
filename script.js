@@ -32,6 +32,10 @@ document.querySelector('.check').addEventListener('click', function () {
             highScore = score;
             document.querySelector('.highscore').textContent = highScore;
         }
+
+        // Promt player to play again
+        document.querySelector('.again').classList.add('again-post-game')
+
     }
 
     // When guess is too high
@@ -59,7 +63,7 @@ document.querySelector('.check').addEventListener('click', function () {
     }
 });
 
-document.querySelector('.again').addEventListener('click', function() {
+document.querySelector('.again').addEventListener('click', function () {
     score = 20;
     secretNumber = Math.floor(Math.random() * 20) + 1;
     document.querySelector('body').style.backgroundColor = '#fafafa';
