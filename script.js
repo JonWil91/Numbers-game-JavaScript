@@ -9,9 +9,9 @@ let highScore = 0;
 document.querySelector('.check').addEventListener('click', function () {
     const guess = Number(document.querySelector('.guess').value);
 
-    // No number input
-    if (!guess) {
-        document.querySelector('.message').textContent = 'No Number';
+    // If guess it outside of 1 - 20 parameters
+    if (guess > 20 || guess < 1) {
+        document.querySelector('.message').textContent = 'Number must be between 1 and 20';
     }
 
     // When player wins
@@ -24,6 +24,10 @@ document.querySelector('.check').addEventListener('click', function () {
         // Change background colour
         document.querySelector('body').style.backgroundColor = '#60b347';
 
+        // Widens secret number box
+        document.querySelector('.number').style.width = '20rem';
+
+        // Update highscore if it is beaten
         if (score > highScore) {
             highScore = score;
             document.querySelector('.highscore').textContent = highScore;
@@ -54,3 +58,15 @@ document.querySelector('.check').addEventListener('click', function () {
         }
     }
 });
+
+document.querySelector('.again').addEventListener('click', function() {
+    score = 20;
+    secretNumber = Math.floor(Math.random() * 20) + 1;
+    document.querySelector('body').style.backgroundColor = '#fafafa';
+    document.querySelector('.message').textContent = 'Start guessing...';
+    document.querySelector('.score').textContent = score;
+    document.querySelector('.guess').value = '';
+    document.querySelector('.number').style.width = '10rem';
+    document.querySelector('.number').textContent = '?';
+})
+
