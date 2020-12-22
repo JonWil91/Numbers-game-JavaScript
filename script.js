@@ -1,7 +1,5 @@
 'use strict';
 
-// cmnd ctrl space - emoji
-
 let secretNumber = Math.floor(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
@@ -13,9 +11,9 @@ const displayMessage = message => {
 document.querySelector('.check').addEventListener('click', function () {
     const guess = Number(document.querySelector('.guess').value);
 
-    // If guess it outside of 1 - 20 parameters
+    // If guess is outside of 1 - 20 parameters
     if (guess > 20 || guess < 1) {
-        displayMessage('Number must be between 1 and 20');
+        displayMessage('Number must be between 1 and 20 ❗️');
     }
 
     // When player wins
@@ -42,27 +40,19 @@ document.querySelector('.check').addEventListener('click', function () {
 
     }
 
-    // When guess is too high
-    else if (guess > secretNumber) {
+    // When guess is wrong
+    else if (guess != secretNumber) {
         if (score > 1) {
-            displayMessage('Too High');
+            if (guess > secretNumber) {
+                displayMessage('Too High! 📈');
+            } else {
+                displayMessage('Too Low! 📉');
+            }
             score--;
             document.querySelector('.score').textContent = score;
         } else {
-            displayMessage('You Lose');
-            document.querySelector('.score').textContent = 0;
-        }
-    }
-
-    // When guess is too low
-    else if (guess < secretNumber) {
-        if (score > 1) {
-            displayMessage('Too Low');
-            score--;
-            document.querySelector('.score').textContent = score;
-        } else {
-            displayMessage('You Lose');
-            document.querySelector('.score').textContent = 0;
+            displayMessage('You lost the game! 😭');
+            document.querySelector('.again').classList.add('.again-post-game');
         }
     }
 });
@@ -78,4 +68,3 @@ document.querySelector('.again').addEventListener('click', function () {
     document.querySelector('.number').textContent = '?';
     document.querySelector('.again').classList.remove('again-post-game')
 })
-
